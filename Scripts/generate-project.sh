@@ -6,13 +6,14 @@ echo ""
 
 # 1 Searching Tuist
 echo "1️⃣  Searching for Tuist..."
-TUIST=./.tuist-bin/tuist
-if [[ -f $TUIST ]]
+TUIST=$(which tuist)
+if ! TUIST &> /dev/null
 then
-    echo "✅ Found Tuist at $TUIST"
-else 
     echo "❌ Tuist not found"
     exit 1
+else
+    echo "✅ Found Tuist at $TUIST"
+    echo ""
 fi
 echo ""
 
@@ -36,5 +37,5 @@ TUIST_PROJECT_VERSION=$CURRENT_PROJECT_VERSION $TUIST generate -p $PROJECT_DIR -
 echo "✅ Generating Xcode project and workspace completed"
 echo ""
 
-# 4 Completed
+# Completed
 echo "✅ generate-project.sh completed"

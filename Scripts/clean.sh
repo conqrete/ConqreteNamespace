@@ -1,8 +1,12 @@
 #!/bin/bash
 
+# Info
+echo "🔹 Running clean.sh..."
+echo ""
+
+# 1 Searching Tuist
 echo "1️⃣  Searching for Tuist..."
 TUIST=$(which tuist)
-
 if ! TUIST &> /dev/null
 then
     echo "❌ Tuist not found"
@@ -11,14 +15,18 @@ else
     echo "✅ Found Tuist at $TUIST"
     echo ""
 fi
-
-# Clean Instructions
-
-echo "2️⃣  Will delete folders 'Derived', 'DerivedData', 'ConqreteNamespace.xcodeproj', 'ConqreteNamespace.xcworkspace'"
-rm -rf -f ./Derived ./DerivedData ./ConqreteNamespace.xcodeproj ./ConqreteNamespace.xcworkspace
-echo "✅ Deleted folders 'Derived', 'DerivedData', 'ConqreteNamespace.xcodeproj', 'ConqreteNamespace.xcworkspace'"
 echo ""
 
-echo "3️⃣  Will clean tuist caches"
+# 2 Clean Ttuist caches
+echo "2️⃣  Cleaning Tuist caches..."
 TUIST clean
-echo "✅ Cleaned tuist caches"
+echo "✅ Completed cleaning Tuist caches"
+
+# 3 Clean Xcode caches
+echo "3️⃣  Cleaninig Xcode workspace, project and caches..."
+rm -rf -f ./Derived ./DerivedData ./ConqreteNamespace.xcodeproj ./ConqreteNamespace.xcworkspace
+echo "✅ Completed cleaninig Xcode workspace, project and caches"
+echo ""
+
+# Completed
+echo "✅ clean.sh completed"
