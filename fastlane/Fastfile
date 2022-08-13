@@ -6,7 +6,8 @@ platform :ios do
   lane :tests do
     run_tests(
       workspace: "ConqreteNamespace.xcworkspace",
-      scheme: "ConqreteNamespace"
+      scheme: "ConqreteNamespace",
+      code_coverage: true
     )
   end
 
