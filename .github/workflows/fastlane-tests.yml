@@ -1,0 +1,29 @@
+name: fastlane-tests
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v3
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Install fastlane
+        run: bundle install  
+
+      - name: Generate Xcode project
+        run: ./Scripts/generate-project.sh
+
+      - name: Run tests
+        run: bundle exec fastlane ios tests
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
