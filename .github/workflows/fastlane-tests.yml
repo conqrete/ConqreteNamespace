@@ -20,6 +20,11 @@ jobs:
       - name: Tuist generate
         uses: tuist/tuist-action@0.13.0
         with:
+          command: 'fetch'
+
+      - name: Tuist generate
+        uses: tuist/tuist-action@0.13.0
+        with:
           command: 'generate'
 
       - name: Run tests
