@@ -16,9 +16,6 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
- 
-      - name: Install fastlane
-        run: bundle install  
 
       - name: Generate Xcode project
         run: ./Scripts/generate-project.sh
