@@ -1,4 +1,4 @@
-name: fastlane-tests
+name: fastlane tests
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'main'
 
 jobs:
-  build:
+  test:
     runs-on: macos-latest
     steps:
       - name: Clone project
@@ -16,7 +16,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-
+ 
       - name: Install fastlane
         run: bundle install  
 

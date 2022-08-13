@@ -83,3 +83,6 @@ Tuist/Dependencies
 
 ### CI Artifacts ###
 artifacts
+
+### Gemfile lock
+Gemfile.lock
