@@ -9,16 +9,18 @@ jobs:
   test:
     runs-on: macos-latest
     steps:
-      - name: Clone project
+      - name: Checkout project
         uses: actions/checkout@v3
 
-      - name: Setup Ruby
+      - name: Setup ruby & install fastlane
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
 
-      - name: Generate Xcode project
-        run: ./Scripts/generate-project.sh
+      - name: Tuist generate
+        uses: tuist/tuist-action@0.13.0
+        with:
+          command: 'generate'
 
       - name: Run tests
         run: bundle exec fastlane ios tests
