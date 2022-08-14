@@ -1,4 +1,4 @@
-name: fastlane tests
+name: Build & Test
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Tuist generate
+      - name: Tuist fetch
         uses: tuist/tuist-action@0.13.0
         with:
           command: 'fetch'
@@ -27,12 +27,5 @@ jobs:
         with:
           command: 'generate'
 
-      - name: Run tests
-        run: bundle exec fastlane ios tests
-
-      - name: Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          flags: unittests
-          fail_ci_if_error: true
-          verbose: true
+      - name: Build & Test
+        run: bundle exec fastlane ios test
