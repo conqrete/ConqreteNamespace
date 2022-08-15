@@ -36,7 +36,7 @@ extension Settings {
 
     public static func dependenciesBaseSettings() -> Settings {
         var baseSettings = SettingsDictionary()
-            .swiftVersion("5.5")
+            .swiftVersion("5.6")
         baseSettings["IPHONEOS_DEPLOYMENT_TARGET"] = "14.0"
         return .defaultSettings(
             base: baseSettings

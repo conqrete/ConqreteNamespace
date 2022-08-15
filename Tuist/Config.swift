@@ -9,7 +9,7 @@
 import ProjectDescription
 
 let config = Config(
-    swiftVersion: "5.5.0",
+    swiftVersion: "5.6",
     plugins: [
         .git(url: "https://github.com/tuist/tuist-plugin-lint", tag: "0.3.0")
     ],

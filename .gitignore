@@ -62,15 +62,16 @@ DerivedData/
 *.xcodeproj
 *.xcworkspace
 
-### Tuist derived files ###
+### Tuist ###
+# Derived files
 graph.dot
 Derived/
 
-### Tuist managed dependencies ###
+# Dependencies
 Tuist/Dependencies
 
-### Tuist Bundled ###
-.tuist-bin/Templates/
+# Tuist bundled
+.tuist-bin/
 
 ### SPM ###
 .build/
@@ -80,9 +81,7 @@ Tuist/Dependencies
 **/fastlane/report.xml
 **/fastlane/Preview.html
 **/fastlane/screenshots
+**/fastlane/README.md
 
-### CI Artifacts ###
-artifacts
-
-### Gemfile lock
+### Gemfile lock ###
 Gemfile.lock

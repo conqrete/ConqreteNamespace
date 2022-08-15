@@ -11,9 +11,57 @@ Bottommost layer of **Conqrete** family that contains just Conqrete namespace:
 public enum Conqrete {}
 ```
 
-## When to use
+# Installation
 
-Use this dependency when building another Conqrete family framework that should introduce any kind of tooling or new Namespaces. These tools should be nested in `Conqrete` namespace like this:
+## Tuist
+
+To install ConqreteNamespace as a dependency for yout project via **Tuist**, you should first add this to dependencies list at `Dependencies.swift` like this:
+
+```Swift
+// Dependencies.swift
+
+import ProjectDescription
+
+let dependencies = Dependencies(
+    // ...
+    swiftPackageManager: SwiftPackageManagerDependencies(
+        [
+            .remote(
+                url: "https://github.com/conqrete/ConqreteNamespace",
+                requirement: .upToNextMajor(from: "0.9.0")
+            )
+            // ...
+        ],
+        // ...
+    ),
+    // ...
+)
+```
+
+> If your Tuist project does not have any dependencies yet, please follow [official Tuist's documentation for adding external dependencies](https://docs.tuist.io/guides/third-party-dependencies).
+
+## SPM
+
+Also, you could use pure **SPM** to install ConqreteNamespace. Modify your `Package.swift` to add:
+
+```Swift
+// Package.swift
+
+let package = Package(
+    // ...
+    dependencies: [
+        .package(url: "https://github.com/conqrete/ConqreteNamespace", .upToNextMajor(from: "0.9.0")),
+        // ...
+    ],
+    // ...
+)
+```
+
+# Usage
+
+Tou should use `ConqreteNamespace` when building another `Conqrete`-family framework, and it introduces any kind of tooling or new Namespaces domain-independent namespace. These tools should be nested in `Conqrete`.
+
+Example from `ConqreteAnalytics` framework:
 
 ```Swift
 //
