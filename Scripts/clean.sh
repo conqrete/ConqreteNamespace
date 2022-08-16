@@ -7,13 +7,11 @@ echo ""
 # 1 Searching Tuist
 echo "1️⃣  Searching for Tuist..."
 TUIST=$(which tuist)
-if ! TUIST &> /dev/null
-then
+if ! TUIST &> /dev/null; then
     echo "❌ Tuist not found"
     exit 1
 else
     echo "✅ Found Tuist at $TUIST"
-    echo ""
 fi
 echo ""
 

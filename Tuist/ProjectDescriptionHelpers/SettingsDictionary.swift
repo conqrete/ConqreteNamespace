@@ -10,12 +10,6 @@ import ProjectDescription
 
 extension SettingsDictionary {
 
-    func developmentTeam(_ developmentTeam: String) -> SettingsDictionary {
-        var result = self
-        result["DEVELOPMENT_TEAM"] = .string(developmentTeam)
-        return result
-    }
-
     func activeCompilationConditions(_ conditions: String...) -> SettingsDictionary {
         var result = self
         result["SWIFT_ACTIVE_COMPILATION_CONDITIONS"] = .array(conditions)

@@ -14,7 +14,6 @@ extension Settings {
 
     public static func projectSettings() -> Settings {
         let baseSettings = SettingsDictionary()
-            .developmentTeam(ProjectConstants.developmentTeam)
             .swiftVersion("5.6")
             .appleGenericVersioningSystem()
             .currentProjectVersion(ProjectConstants.currentProjectVersion)
@@ -37,7 +36,7 @@ extension Settings {
         let baseSettings = SettingsDictionary()
             .currentProjectVersion(ProjectConstants.currentProjectVersion)
             .currentLibraryVersion(ProjectConstants.currentProjectVersion)
-            .automaticCodeSigning(devTeam: ProjectConstants.developmentTeam)
+            .automaticCodeSigning(devTeam: "")
             .onlyAllowAppExtensionAPI(onlyAllowAppExtensionAPI)
         return .makeSettings(base: baseSettings)
     }

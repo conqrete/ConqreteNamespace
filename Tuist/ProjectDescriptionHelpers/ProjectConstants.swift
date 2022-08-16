@@ -16,7 +16,6 @@ public enum ProjectConstants {
         return versionString.trimmingCharacters(in: .whitespacesAndNewlines)
     }()
 
-    public static let developmentTeam: String = "TGW2AJCC32"
     public static let organizationName: String = "com.conqrete"
 
     public static let projectName: String = "ConqreteNamespace"
