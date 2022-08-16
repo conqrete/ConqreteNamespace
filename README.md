@@ -4,6 +4,7 @@
 ![build & test](https://img.shields.io/github/workflow/status/conqrete/ConqreteNamespace/Build%20&%20Test?label=build%20%26%20test)
 ![platforms](https://img.shields.io/badge/platforms-iOS-lightgrey.svg)
 ![license](https://img.shields.io/github/license/conqrete/ConqreteNamespace)
+![powered by tuist](https://img.shields.io/badge/powered%20by-Tuist-blue)
 
 Bottommost layer of **Conqrete** family that contains just Conqrete namespace:
 
