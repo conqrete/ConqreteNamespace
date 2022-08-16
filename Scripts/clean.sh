@@ -6,8 +6,8 @@ echo ""
 
 # 1 Searching Tuist
 echo "1️⃣  Searching for Tuist..."
-TUIST=$(which tuist)
-if ! TUIST &> /dev/null; then
+export TUIST=$(which tuist)
+if ! command -v $TUIST &> /dev/null; then
     echo "❌ Tuist not found"
     exit 1
 else
@@ -17,7 +17,7 @@ echo ""
 
 # 2 Clean Ttuist caches
 echo "2️⃣  Cleaning Tuist caches..."
-TUIST clean
+$TUIST clean
 echo "✅ Completed cleaning Tuist caches"
 
 # 3 Clean Xcode caches
