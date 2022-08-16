@@ -14,7 +14,7 @@ extension Settings {
 
     public static func projectSettings() -> Settings {
         let baseSettings = SettingsDictionary()
-            .swiftVersion("5.6")
+            .swiftVersion("5.5")
             .appleGenericVersioningSystem()
             .currentProjectVersion(ProjectConstants.currentProjectVersion)
         let debugSettings = SettingsDictionary()
